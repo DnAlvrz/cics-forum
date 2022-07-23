@@ -1,0 +1,140 @@
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color:  #F5F5F5; 
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #6cb2eb;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.container-fluid {
+  padding: 0px !important;
+}
+
+#side-nav-button {
+  padding:10px;
+
+}
+
+.wrapper {
+  width: 95%;
+  margin:auto;
+  padding: 1.25rem;
+}
+
+#aside-nav {
+  padding: 20px;
+  position: fixed;
+  z-index: 1;
+  right: 0;
+}
+#main-content {
+  width:97%;
+  margin:auto;
+}
+
+/* Add an active class to the active dropdown button */
+.sidenav .active-link {
+  background-color: green;
+  color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: #F5F5F5;
+  padding-left: 8px;
+}
+
+a.drop-down-link {
+  font-size: 15px;
+}
+
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+#register-form {
+  margin:auto; 
+  padding: 50px;
+}
+
+.avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: auto;
+}
+
+.avatar-1 {
+  vertical-align: middle;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  margin: auto;
+}
+
+.avatar-2 {
+  vertical-align: middle;
+  width: 175px;
+  height: 175px;
+  border-radius: 50%;
+  margin: auto;
+}
+
+.btn-vote {
+  border:none;
+  background:none;
+  color:#3490dc;
+}
+
+.btn-vote:hover {
+  color:#818181;
+}
+.dropdown-menu {
+  min-width: 7.5rem !important;
+}
