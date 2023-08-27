@@ -1,3 +1,0 @@
-Can I flash my mining gpu with a gaming bios?
-
-Hello, my name is anon and  I would like to ask a question. I have a mining variant of the nvidia GTX 1060. What happens if I flash it with a gaming bios? Will I brick my GPU?

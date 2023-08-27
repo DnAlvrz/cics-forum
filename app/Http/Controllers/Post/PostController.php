@@ -47,7 +47,7 @@ class PostController extends Controller
             'type'=>$request->type,
             'category'=>$request->category
         ]);
-        
+
         return back()->with('status', 'Thread was posted');
     }
 
@@ -60,9 +60,9 @@ class PostController extends Controller
         }
         return back();
     }
-    
+
     public function update (Request $request, Post $post) {
-        $this->validate([
+        $this->validate($request, [
             'title' => 'required',
             'description' => 'required',
             'type' => 'required'
@@ -70,7 +70,7 @@ class PostController extends Controller
         $post->update($request->all());
         return back()->with('status', 'Post was updated successfully');
     }
-    
+
     public function destroy(Post $post)
     {
         $post->delete();
@@ -83,6 +83,7 @@ class PostController extends Controller
         $post->mark($comment);
         return back()->with('status', 'Comment Marked.');
     }
+
     public function search(Request $request) {
         $query = request()->query('query');
         $posts = Post::where('title', 'Like', "%{$query}%")->paginate(15);
