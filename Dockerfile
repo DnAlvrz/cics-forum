@@ -1,29 +1,26 @@
-FROM php:8.2-cli-alpine
+FROM php:8.2-cli
 
-RUN apk add --no-cache \
-    bash git curl unzip zip \
-    libpng-dev libjpeg-turbo-dev freetype-dev \
-    oniguruma-dev icu-dev libzip-dev
-
-RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
+RUN apt-get update && apt-get install -y \
+    git curl unzip zip \
+    libpng-dev libjpeg-dev libfreetype6-dev \
+    libicu-dev libzip-dev \
+    && docker-php-ext-configure gd \
     && docker-php-ext-install \
-        pdo pdo_mysql \
-        mbstring intl gd zip opcache
+        pdo pdo_mysql mbstring intl gd zip opcache
 
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 WORKDIR /app
 
-# 1. COPY EVERYTHING FIRST (IMPORTANT FIX)
-COPY . .
+COPY composer.json composer.lock ./
 
-# 2. NOW run composer (artisan already exists)
 RUN composer install \
     --no-dev \
     --optimize-autoloader \
     --no-interaction \
-    --no-progress \
-    --ignore-platform-reqs
+    --no-progress
+
+COPY . .
 
 RUN chmod -R 775 storage bootstrap/cache
 
