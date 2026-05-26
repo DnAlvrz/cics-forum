@@ -1,44 +1,61 @@
-# Dependencies (never copy into image)
+# ─────────────────────────────
+# Dependencies (never copy)
+# ─────────────────────────────
 node_modules
 vendor
 
+# ─────────────────────────────
 # Git
+# ─────────────────────────────
 .git
 .gitignore
 
-# Environment files (security + config handled by Render)
+# ─────────────────────────────
+# Environment files (security)
+# ─────────────────────────────
 .env
 .env.*
 !.env.example
 
+# ─────────────────────────────
 # Logs
+# ─────────────────────────────
+*.log
 npm-debug.log*
 yarn-error.log*
-*.log
 
-# Laravel cache & runtime
-storage/*.key
+# ─────────────────────────────
+# Laravel runtime (safe to exclude)
+# ─────────────────────────────
 storage/logs
 storage/framework/cache
 storage/framework/sessions
 storage/framework/views
 bootstrap/cache
 
-# Testing / CI noise
+# ─────────────────────────────
+# Testing / CI
+# ─────────────────────────────
 .phpunit.result.cache
-coverage
 .phpunit.cache
+coverage
 
-# Frontend build artifacts (optional depending on workflow)
+# ─────────────────────────────
+# Frontend build artifacts
+# ─────────────────────────────
 public/build
 public/mix-manifest.json
 
-# OS / editor junk
+# ─────────────────────────────
+# OS / IDE junk
+# ─────────────────────────────
 .DS_Store
 Thumbs.db
 .idea
 .vscode
 
-# Docker / local orchestration
+# ─────────────────────────────
+# Local docker files (optional)
+# ─────────────────────────────
 docker-compose.yml
 Dockerfile
