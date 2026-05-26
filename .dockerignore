@@ -1,0 +1,44 @@
+# Dependencies (never copy into image)
+node_modules
+vendor
+
+# Git
+.git
+.gitignore
+
+# Environment files (security + config handled by Render)
+.env
+.env.*
+!.env.example
+
+# Logs
+npm-debug.log*
+yarn-error.log*
+*.log
+
+# Laravel cache & runtime
+storage/*.key
+storage/logs
+storage/framework/cache
+storage/framework/sessions
+storage/framework/views
+bootstrap/cache
+
+# Testing / CI noise
+.phpunit.result.cache
+coverage
+.phpunit.cache
+
+# Frontend build artifacts (optional depending on workflow)
+public/build
+public/mix-manifest.json
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+.idea
+.vscode
+
+# Docker / local orchestration
+docker-compose.yml
+Dockerfile
