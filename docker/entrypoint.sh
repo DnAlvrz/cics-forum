@@ -18,5 +18,9 @@ EOF
 php /var/www/html/artisan config:clear
 php /var/www/html/artisan config:cache
 
-
 exec /usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf
+
+if [ -n "$SSL_CA_BASE64" ]; then
+    echo "$SSL_CA_BASE64" | base64 -d > /var/www/html/ca.pem
+    export MYSQL_ATTR_SSL_CA=/var/www/html/ca.pem
+fi
