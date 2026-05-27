@@ -32,5 +32,6 @@ bootstrap/cache/*
 .vscode/
 .DS_Store
 
-# Docker (optional local files)
-docker-compose.yml
+# SSL certificates and Credentials
+*.pem
+*.crt
