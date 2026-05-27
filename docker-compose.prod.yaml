@@ -16,5 +16,5 @@ services:
       DB_DATABASE: ${DB_DATABASE}
       DB_USERNAME: ${DB_USERNAME}
       DB_PASSWORD: ${DB_PASSWORD}
-      MYSQL_ATTR_SSL_CA: ./ca.pem
+      MYSQL_ATTR_SSL_CA: /var/www/html/ca.pem
     restart: unless-stopped

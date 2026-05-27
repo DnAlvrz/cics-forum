@@ -35,3 +35,4 @@ bootstrap/cache/*
 # SSL certificates and Credentials
 *.pem
 *.crt
+docker_docs.md
